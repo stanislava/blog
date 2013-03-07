@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang=ru>
+<head>
+  <meta charset=utf-8>
+  <title>Фотограф Станислава Старцева</title>
+  <meta name=description content="Фотографирую с душой, ретуширую с хирургической точностью, хорошо знаю цену своей работы,
+  с уважением отношусь к клиентам. Обладаю редким даром замечать, фиксировать и подчеркивать красоту.">
+  <meta name=copyright content="Станислава Старцева">
+  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/MyFontsWebfontsKit.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="theme/supersized.shutter.css" type="text/css" media="screen" />
+  <style type="text/css">
+    .header {
+      font-size: 0.75em;
+      font-family: MuseoCyrl-500, Arial;
+      font-weight: normal;
+      font-style: normal;
+      margin: 1em;
+    }
+    .header h1 {
+      display: inline-block;
+      padding: 0.25em 0.5em 0em 0.5em;
+      background-color: rgba(24, 6, 78, 0.3);
+      color: rgb(195, 199, 206);
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class='header'>
+    <h1>Станислава Старцева</h1>
+  </div>
+
+  <!--Thumbnail Navigation-->
+  <div id="prevthumb"></div>
+  <div id="nextthumb"></div>
+
+  <!--Arrow Navigation-->
+  <a id="prevslide" class="load-item"></a>
+  <a id="nextslide" class="load-item"></a>
+
+  <div id="thumb-tray" class="load-item">
+    <div id="thumb-back"></div>
+    <div id="thumb-forward"></div>
+  </div>
+
+  <!--Time Bar-->
+  <div id="progress-back" class="load-item">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!--Control Bar-->
+  <div id="controls-wrapper" class="load-item">
+    <div id="controls">
+
+      <a id="play-button"><img id="pauseplay" src="img/pause.png"/></a>
+
+      <!--Slide counter-->
+      <div id="slidecounter">
+        <span class="slidenumber"></span> / <span class="totalslides"></span>
+      </div>
+
+      <!--Slide captions displayed here-->
+      <div id="slidecaption"></div>
+
+      <!--Thumb Tray button-->
+      <a id="tray-button"><img id="tray-arrow" src="img/button-tray-up.png"/></a>
+
+      <!--Navigation-->
+      <ul id="slide-list"></ul>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+  <script type="text/javascript" src="theme/supersized.shutter.min.js"></script>
+
+  <script type="text/javascript">
+    var numberWithPadding = function(x) { return String("00" + x).slice(-3) },
+        slides = [];
+    for (var i=1; i<=33; i++) { slides.push({image: "photo/" + numberWithPadding(i) + '.jpg'}) };
+
+    jQuery(function($){
+      $.supersized({
+        slide_interval  : 4000,
+        transition      : 1,
+        transition_speed: 700,
+        slide_links     : false,
+        slides          : slides
+      });
+    });
+  </script>
+</body>
+</html>
